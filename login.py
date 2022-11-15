@@ -8,14 +8,14 @@ root.configure(bg = "black")
 lista = []
 
 lbl_felh = Label(root, text = "Felhasználónév:", bg="black", fg="white")
-lbl_felh.grid(row = 1, column = 0)
-etr_fhszn = Entry(root, bg = "lightblue")
-etr_fhszn.grid(row = 1, column = 1)
+lbl_felh.grid(row = 1, column = 1)
+etr_fhszn = Entry(root, bg = "lightblue", width = 30)
+etr_fhszn.grid(row = 2, column = 1)
 
 lbl_jelszo = Label(root, text = "Jelszó: ", bg = "black", fg = "white")
-lbl_jelszo.grid(row = 2, column = 0)
-etr_jelszo = Entry(root, bg = "lightblue")
-etr_jelszo.grid(row = 2, column = 1)
+lbl_jelszo.grid(row = 3, column = 1)
+etr_jelszo = Entry(root, bg = "lightblue", width = 30)
+etr_jelszo.grid(row = 4, column = 1)
 
 
 with open("loginusers.txt", "r", encoding = "utf-8") as adatok:
@@ -47,9 +47,16 @@ def login():
         if(i["fhsznev"] == befhsz and i["jelszo"] == bejelszo):
             benev = i["nev"]
             betype = i["rang"]
+            mainpage()
 
-    print(benev, befhsz, bejelszo, betype)
+def mainpage():
+    mainpage = Toplevel()
+    mainpage.title(str(benev) + ": " + str(betype))
+    mainpage.config(bg = "black")   
 
-btn_login = Button(root, text="Bejelentkezés", bg = "black", fg = "white", command=lambda:login()).grid(row = 3, column = 1)
+    mainpage.mainloop()
+
+
+btn_login = Button(root, text="Bejelentkezés", bg = "black", fg = "white", command=lambda:login()).grid(row = 5, column = 1)
 
 root.mainloop()
