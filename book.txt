@@ -31,7 +31,7 @@ Egy egész élet; Park Könyvkiadó; Robert Seethaler; 136; 2017; False
 Éjszakák között; Atlantic Press; Marton Levente; 272; 2020; True
 Emlékezz rám!; Kossuth Kiadó Zrt.; Mario Escobar; 381; 2021; True
 Emmaus; Libri Könyvkiadó Kft.; Alessandro Baricco; 172; 2014; False
-Engedetlenek; Pesti Kalligram Kft.; 202; 2018; False
+Engedetlenek; Pesti Kalligram Kft.; Bódi Péter; 202; 2018; False
 Felhő Regény; Napkút Kiadó Kft.; Nagy Zopán; 339; 2018; True
 A három kiscica; Móra Ferenc Ifjúsági Könyvkiadó Zrt.; Vlagyimir Szutyejev; 8; 2022; True
 Különleges munkagépek; Manó Könyvek; Monika Wittmann; 24; 2022; False
