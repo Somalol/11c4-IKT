@@ -1,0 +1,69 @@
+Egri csillagok; Akkor Kiadó Kft.; Gárdonyi Géza; 531; 2002; True
+Fiúk cinkkoporsóban; Európa Könyvkiadó Kft.; Szvetlana Alekszijevics; 373; 2022; False
+Notre-Dame - A katedrális története; Gabo Könyvkiadó és Keresk. Kft.; Ken Follett; 112; 2022; False
+Pandóra - Bizonyos ajtókat sohasem szabad kinyitni; Alexandra Könyvesház Kft.; Susan Stokes-Chapman; 416; 2False22; True
+A császárné; Európa Könyvkiadó Kft.; Gigi Griffis; 254; 2022; True
+A becsület zsoldjában; Lazi Könyvkiadó Kft.; Marcellus Mihály; 291; 2020; False
+A fakó lovas; Alexandra Könyvesház Kft.; Bernard Cornwell; 356; 2021; True
+A földön futó város; Trianon Múzeum; Zilahy Lajos; 223; 2020; True
+A korona ügynöke; Libri Könyvkiadó Kft.; Kondor Vilmos; 445; 2018; False
+A rendszerváltó; Pesti Kalligram Kft.; Kerékgyártó István; 240; 2017; True
+Aranyménes; Rézbong Kiadó; Ősi János; 265; 2017; False
+Auschwitz gyógyszerésze; I.P.C. Könyvek Kft.; Patricia Posner; 358; 2021; False
+Csatadal; Alexandra Könyvesház Kft.; Bernard Cornwell; 320; 2021; True
+Eichmann-csokoládé; Múlt és Jövő Alapítvány; Bikácsy Gergely; 204; 2019; True
+Elvesztek Párizsban; Agave Könyvek Kiadó Kft.; Pam Jenoff; 378; 2021; False
+Esőcsináló; Tarandus Kft.; Tan Twan Eng; 605; 2015; False
+Farkasbőrben; Libri Könyvkiadó Kft.; Hilary Mantel; 888; 2018; True
+München; Gabo Könyvkiadó és Keresk. Kft.; Robert Harris; 352; 2018; True
+Út a romokon át; I.P.C. Mirror Könyvkiadó; Gemma Liviero; 455; 2020; False
+Sztálin borospincéje; Európa Könyvkiadó Kft.; John Baker - Nick Place; 360; 2021; True
+A befejezhetetlen; Fiatal Írók Szövetsége; Tarcsay Zoltán; 397; 2022; False
+A budapesti nyakék; Európa Könyvkiadó Kft.; Ayelet Waldman; 563; 2019; True
+A csillagok világa; Athenaeum Kiadó Kft.; Vámos Miklós; 460; 2022; False
+A kezdő; Trubadur Kiadó; Charles Bukowski; 363; 2022; True
+A pestis; Jelenkori Kiadó; Albert Camus; 375; 2019; False
+A tél katonája; Maxim Könyvkiadó Kft.; Daniel Mason; 382; 2020; False
+Az utolsó vadlovak; Cser Könyvkiadó és Keresk. Kft.; Maja Lunde; 381; 2022; True
+Börtöntöltelék; Helikon Kiadó; Kurt Vonnegut; 368; 2016; True
+Csattan, ás, temet; Napkút Kiadó Kft.; Tamási Orosz János; 138; 2017; False
+Egy egész élet; Park Könyvkiadó; Robert Seethaler; 136; 2017; False
+Éjszakák között; Atlantic Press; Marton Levente; 272; 2020; True
+Emlékezz rám!; Kossuth Kiadó Zrt.; Mario Escobar; 381; 2021; True
+Emmaus; Libri Könyvkiadó Kft.; Alessandro Baricco; 172; 2014; False
+Engedetlenek; Pesti Kalligram Kft.; Bódi Péter; 202; 2018; False
+Felhő Regény; Napkút Kiadó Kft.; Nagy Zopán; 339; 2018; True
+A három kiscica; Móra Ferenc Ifjúsági Könyvkiadó Zrt.; Vlagyimir Szutyejev; 8; 2022; True
+Különleges munkagépek; Manó Könyvek; Monika Wittmann; 24; 2022; False
+Tűzoltók - A járművek világa; Scolar Kiadó Kft.; Susanne Gernhäuser; 24; 2022; False
+Repülőtér - A járművek világa; Scolar Kiadó Kft.; Susanne Gernhäuser; 24; 2022; True
+Lézerlámpa; Kreatív Kiadó; Lackfi János; 10; 2022; True
+Szép napot, kiskutya; Babilon Kiadó; Nathalie Choux; 12; 2022; False
+Fedezd fel a nagy járműveket; Scolar Kiadó Kft.; Susanne Gernhäuser; 20; 2021; True
+Színek - Pöttöm pajtik; Mimorello Kiadó; László Gyopár; 10; 2021; False
+Ide nézz! - Járművek; Napraforgó 2005 Kft.; Jordi Busquets; 8; 2019; False
+Évszakok - Téli kaland; Napraforgó 2005 Kft.; Major Eszter; 8; 2017; True
+Bogyó, a csigafiú; Magánkiadás; Bartos Erika; 16; 2016; False
+Babóca, a katicalány; Magánkiadás; Bartos Erika; 16; 2016; False
+Karácsonyi krimik; Helikon Kiadó; Agatha Christie; 391; 2022; True
+Külömös karácsony; Móra Ferenc Ifjúsági Könyvkiadó Zrt.; Végh György; 24; 2017; True
+A karácsony fényei; General Press Kiadó; Catherine Anderson; 404; 2019; True
+Karácsonyi történetek; Harmat Kiadó Alapítvány; Johan Frinsel; 138; 2021; False
+A kemyény főnök; Álomgyár Kiadó; Vi Keeland; 400; 2022; False
+A vonzás törvénye; Magnólia; Kollár Betti; 379; 2022; True
+Az élet értelméről; Libri Könyvkiadó Kft.; Viktor E. Frankl; 145; 2022; True
+A szédítő - A Miles fivérek; Maxim Könyvkiadó Kft.; T. L. Swan; 452; 222; True
+A szajnai ismeretlen; Park Könyvkiadó; Guillaume Musso; 306; 2022; False
+Másodvirágzás; Európa Könyvkiadó Kft.; Valérie Perrin; 598; 2022; False
+Az ártatlanság vámszedői; Álomgyár Kiadó; John Cure; 379; 2022; True
+Fedősztori; 21. Század Kiadó; Dezső András; 425; 2021; True
+Frontvonal; Álomgyár Kiadó; Borsa Brown; 154; 2020; False
+Az én világom; Scolar Kiadó Kft.; Peter Sagan; 304; 209; True
+Velünk véget ér; Könyvmolyképző Kiadó Kft.; Colleen Hoover; 421; 2017; False
+A világ suttogása; Scolar Kiadó Kft.; Almeida Faria; 141; 2022; False
+A mélység titka; Animus Kiadó; Arnaldur Indridason; 295; 2022; True
+Mindenkinek jut egy takaró; Fiatal Írók Szövetsége; Vasas Tamás; 66; 2022; True
+Szerelmes Budapest; Alinea Kiadó; Pályi Brigitta; 192; 2022; False
+A hold vonzása; Könyvmolyképző Kiadó Kft.; Heteira; 344; 2022; True
+Az éjszaka színei; Könyvmolyképző Kiadó Kft.; Anita Boza; 392; 2022; True
+Neon Gods - Alvilági szerelem; Maxim Könyvkiadó Kft.; Katee Robert; 432; 2022; True
