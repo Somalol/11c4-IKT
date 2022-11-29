@@ -18,7 +18,7 @@ def showBooks():
         listBox.insert("", "end", values=(i+1 ,choosen.title, choosen.writer, choosen.pages, choosen.date, choosen.rented))
 
 root = Tk()
-cols = ('Position', 'Író', 'Cím', 'Oldalak', 'Megjelenés éve' 'Kölcsönzött-e')
+cols = ('Sorszám', 'Író', 'Cím', 'Oldalak', 'Megjelenés éve', 'Kölcsönzött-e')
 listBox = ttk.Treeview(root, columns=cols, show='headings')
 
 for col in cols:
