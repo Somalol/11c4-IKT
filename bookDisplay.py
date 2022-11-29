@@ -4,13 +4,13 @@ import tkinter as tk
 from tkinter import ttk
 
 booksList = []
+
 def fileRead():
-    with open("file.txt", 'r', encoding = 'utf-8') as f:
+    with open("books.txt", 'r', encoding = 'utf-8') as f:
         for line in f:
-            title,writer,pages,date,rented = line.strip().split(";")
-            actual = Book(title, writer, pages, date, rented)
+            title, publisher, writer, pages,date, rented = line.strip().split(";")
+            actual = Book(title.strip(), publisher.strip(), writer.strip(), pages.strip(), date.strip(), rented.strip())
             booksList.append(actual)
-fileRead()
 
 def showBooks():
     for i in range(len(booksList)):
