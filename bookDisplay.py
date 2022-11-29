@@ -9,14 +9,7 @@ booksList = []
 def fileRead():
     with open("books.txt", 'r', encoding = 'utf-8') as f:
         for line in f:
-            title, publisher, writer, pages,date, rented = line.strip().split(";")
-
-            title = title.strip()
-            publisher = publisher.strip()
-            writer = writer.strip()
-            pages = pages.strip()
-            date = date.strip()
-            rented = rented.strip()
+            title, publisher, writer, pages, date, rented = line.strip().split(";")
 
             actual = Book(title, publisher, writer, pages, date, rented)
             
