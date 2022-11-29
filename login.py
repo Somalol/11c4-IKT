@@ -1,5 +1,7 @@
 from tkinter import *
 from bookClass import Book
+from tkinter import ttk
+
 booksList = []
 
 root = Tk()
@@ -56,24 +58,59 @@ def login():
         if(i["fhsznev"] == befhsz and i["jelszo"] == bejelszo):
             benev = i["nev"]
             betype = i["rang"]
-            mainpage()
+            if(i["rang"] == "admin"):
+                adminpage()
+            #elif(i["rang"] == "user"):
+            #    userpage()
 
-def mainpage():
-    mainpage = Toplevel()
-    mainpage.title(str(benev) + ": " + str(betype))
-    mainpage.config(bg = "black")
+def adminpage():
+    adminpage = Toplevel()
+    adminpage.title(str(benev) + ": " + str(betype))
+    adminpage.config(bg = "black")
 
-    etr_bookselect = Entry(mainpage, bg = "lightblue", width = 30)
-    etr_bookselect.grid(row = 0, column = 0)
+    lbl_tajekoztato = Label(adminpage, bg = "black", fg = "white", text = "Kérem a könyv sorszámát írja be")
+    lbl_tajekoztato.grid(row = 0, column = 1)
 
-    btn_kolcsonzes = Button(mainpage, text = "Könyv Kölcsönzése", bg = "black", fg = "white", command = lambda:bookRent(10))
-    btn_kolcsonzes.grid(row = 0, column = 1)   
+    etr_bookselect = Entry(adminpage, bg = "lightblue", width = 30)
+    etr_bookselect.grid(row = 1, column = 1)
+
+    btn_kolcsonzes = Button(adminpage, text = "Könyv kikölcsönzése", bg = "black", fg = "white", command = lambda:bookRent(int(etr_bookselect.get())))
+    btn_kolcsonzes.grid(row = 1, column = 2)   
+
+    btn_change = Button(adminpage, bg = "black", fg = "white", text = "Könyv változtatása")
+    btn_change.grid(row = 1, column = 0)
+
+    btn_add = Button(adminpage, bg = "black", fg = "white", text = "Könyv hozzáadása", width = 30)
+    btn_add.grid(row = 2, column = 1)
+
+
+    #def agreement_changed():
+    #    print("A válasz", agreement.get())
+
+
+
+    #ttk.Checkbutton(adminpage,
+                    #text='I agree',
+                    #command=agreement_changed,
+                    #variable=agreement,
+                    #onvalue='agree', state = DISABLED,
+                    #offvalue='disagree').grid(row = 3, column = 1)
     
-    for i in range(len(booksList)):
-        TitleLabel = Label(mainpage, text=str(i+1) + ". " + actual.writer + ":" + actual.title)
-        TitleLabel.grid(row = i+1, column = 0)
+    sor = 3
 
-    mainpage.mainloop()
+    for i in range(len(booksList)):
+        if(actual.rented == True):
+            ttk.Checkbutton(adminpage, text=str(i+1) + ". " + actual.writer + ": " + actual.title, state = DISABLED).grid(row = sor, column = 1)
+        else:
+            ttk.Checkbutton(adminpage, text=str(i+1) + ". " + actual.writer + ": " + actual.title, command = bookRent(i+1)).grid(row = sor, column = 1)
+
+        #TitleLabel = Label(adminpage, text=str(i+1) + ". " + actual.writer + ": " + actual.title)
+        
+        #TitleLabel.grid(row = sor, column = 1)
+        sor += 1
+
+
+    adminpage.mainloop()
 
 def bookRent(id):
     id = id-1
