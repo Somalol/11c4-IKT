@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
 from tkinter import ttk
-
+import bookMod
 def ezkellide():
     booksList = []
 
@@ -15,7 +15,10 @@ def ezkellide():
                 booksList.append(actual)
     fileRead()
 
+    
+
     def showBooks():
+        
         listBox.delete(*listBox.get_children())
         for i in range(len(booksList)):
             choosen = booksList[i]
@@ -73,8 +76,9 @@ def ezkellide():
     searchInput = Entry(root, width = 19)
     searchInput.grid(row=2, column=3)
     searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get())).grid(row=3, column=2)
-    changeButton = Button(root, text = "Módosítás", width = 15).grid(row = 3, column = 3)
+    changeButton = Button(root, text = "Módosítás", width = 15, command = lambda: bookMod.modify()).grid(row = 3, column = 3)
     rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get())).grid(row = 3, column = 4)
+
 
     style = ttk.Style(root)
     style.theme_use("winnative")

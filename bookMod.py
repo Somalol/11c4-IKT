@@ -95,9 +95,9 @@ def modify():
                     data[id] = booksList[id].title+";"+booksList[id].publisher+";"+booksList[id].writer+";"+booksList[id].pages+";"+booksList[id].date+";"+booksList[id].rented+"\n"
                     f.writelines(data)
             lblmo = messagebox.showinfo(title="Adatmódosítás", message="Adat megváltoztatva",)
-            lblmo.pack()
-            btn_mod = Button(valt, text="Bezárás", command= lambda: valt.destroy)
-            btn_mod.pack()
+            valt.destroy()
+            mod.destroy()
+        
 
                     
         btn_mod = Button(valt, text="Módosítás", command= lambda: done())
@@ -105,5 +105,4 @@ def modify():
     btn_at = Button(mod, text="Megkezdés", command=lambda: bookMod())
     btn_at.pack()
 
-
-
+    mod.mainloop()
