@@ -1,7 +1,7 @@
 Egri csillagok; Akkor Kiadó Kft.; Gárdonyi Géza; 531; 2002; True
 Fiúk cinkkoporsóban; Európa Könyvkiadó Kft.; Szvetlana Alekszijevics; 373; 2022; False
 Notre-Dame - A katedrális története; Gabo Könyvkiadó és Keresk. Kft.; Ken Follett; 112; 2022; False
-Pandóra - Bizonyos ajtókat sohasem szabad kinyitni; Alexandra Könyvesház Kft.; Susan Stokes-Chapman; 416; 2False22; True
+Pandóra - Bizonyos ajtókat sohasem szabad kinyitni; Alexandra Könyvesház Kft.; Susan Stokes-Chapman; 416; 2022; True
 A császárné; Európa Könyvkiadó Kft.; Gigi Griffis; 254; 2022; True
 A becsület zsoldjában; Lazi Könyvkiadó Kft.; Marcellus Mihály; 291; 2020; False
 A fakó lovas; Alexandra Könyvesház Kft.; Bernard Cornwell; 356; 2021; True
