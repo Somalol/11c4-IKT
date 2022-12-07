@@ -3,22 +3,19 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
 from tkinter import ttk
-import bookMod
+
+import fileread
+import bookModify
+import writeNewFile
+
 def ezkellide():
-    booksList = []
 
     def fileRead():
-        with open("books.txt", 'r', encoding = 'utf-8') as f:
-            for line in f:
-                title, publisher, writer, pages,date, rented = line.strip().split(";")
-                actual = Book(title, publisher, writer, pages, date, rented)
-                booksList.append(actual)
-    fileRead()
-
-    
+        global booksList
+        booksList = fileread.fileRead()
 
     def showBooks():
-        
+        fileRead()
         listBox.delete(*listBox.get_children())
         for i in range(len(booksList)):
             choosen = booksList[i]
@@ -26,37 +23,43 @@ def ezkellide():
 
     def bookSearch(search):
         index = 1
+        returnIndex = 0
         listBox.delete(*listBox.get_children())
 
         for i in booksList:
             if i.title == str(search):
                 listBox.insert("", "end", values=(index ,i.title, i.writer, i.pages, i.date, i.rented))
                 index += 1
+                return(returnIndex)
             else:
                 if i.writer == search:
                     listBox.insert("", "end", values=(index ,i.title, i.writer, i.pages, i.date, i.rented))
                     index += 1
+                    return(returnIndex)
                 elif i.rented == search:
                     listBox.insert("", "end", values=(index,i.title, i.writer, i.pages, i.date, i.rented))
                     index += 1
+                    return(returnIndex)
+            returnIndex += 1
 
         if index == 1 :
             messagebox.showerror(title = "Error", message = "Nincs találat")
             showBooks()
 
     def bookRent(search):
-        listBox.delete(*listBox.get_children())
-
-        for i in booksList:
-            if(i.title == str(search)):
-                if(i.rented == "False"):
-                    i.rented = "True"
-                    messagebox.showinfo(title = "Siker", message = "Sikeresen kikölcsönözte a kívánt könyvet!")
-                else:
-                    messagebox.showerror(title = "Error", message = "A könyv már ki van kölcsönözve!")
-
+        id = bookSearch(search)
+        choose = booksList[id]
+        if choose.rented == "True":
+            print("Már kölcsönözve")
+        else:
+            choose.rented = "True"
+            print("Könyv ki kölcsönözve") 
+            writeNewFile.dataWrite(id , booksList)
         showBooks()
 
+    def modifyCall(search):
+        id = bookSearch(search)
+        bookModify.modify(id)
 
     root = Tk()
     #Table
@@ -76,12 +79,14 @@ def ezkellide():
     searchInput = Entry(root, width = 19)
     searchInput.grid(row=2, column=3)
     searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get())).grid(row=3, column=2)
-    changeButton = Button(root, text = "Módosítás", width = 15, command = lambda: bookMod.modify()).grid(row = 3, column = 3)
+    changeButton = Button(root, text = "Módosítás", width = 15, command = lambda:modifyCall(searchInput.get())).grid(row = 3, column = 3)
     rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get())).grid(row = 3, column = 4)
 
 
     style = ttk.Style(root)
     style.theme_use("winnative")
+
+    fileRead()
     root.mainloop()
 
 
