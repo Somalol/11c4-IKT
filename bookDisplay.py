@@ -3,11 +3,6 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
 from tkinter import ttk
-import bookMod
-
-import fileread
-import bookModify
-import writeNewFile
 
 import fileread
 import bookModify
