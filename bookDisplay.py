@@ -75,7 +75,7 @@ def ezkellide():
 
     for col in column_names:
         listBox.heading(col, text=col)    
-    listBox.grid(row=2, column=0, columnspan=2)
+    listBox.grid(row=2, column=0, columnspan=5)
 
     showScores = tk.Button(root, text="Show books", width=15, command=showBooks).grid(row=3, column=0)
     closeButton = tk.Button(root, text="Close", width=15, command=exit).grid(row=3, column=1)
