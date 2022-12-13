@@ -3,12 +3,6 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
 from tkinter import ttk
-import bookMod
-
-import fileread
-import bookModify
-import writeNewFile
-
 import fileread
 import bookModify
 import writeNewFile
@@ -87,18 +81,18 @@ def ezkellide():
 
     for col in column_names:
         listBox.heading(col, text=col)    
-    listBox.grid(row=2, column=0, columnspan=5)
+    listBox.grid(row=2, column=0, columnspan=4)
 
     showScores = tk.Button(root, text="Könyvek megjelenítése", width=20, command=showBooks).grid(row=3, column=0)
-    closeButton = tk.Button(root, text="Kilépés", width=15, command=quit).grid(row=3, column=1)
+    closeButton = tk.Button(root, text="Kilépés", width=15, command=quit).grid(row=3, column= 3)
     #Table END
 
     #Search
-    searchInput = Entry(root, width = 19)
-    searchInput.grid(row=2, column=3)
-    searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get())).grid(row=3, column=2)
-    changeButton = Button(root, text = "Módosítás", width = 15, command = lambda:modifyCall(searchInput.get())).grid(row = 3, column = 3)
-    rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get())).grid(row = 3, column = 4)
+    searchInput = Entry(root, width = 40)
+    searchInput.grid(row=0, column=1, columnspan = 2)
+    searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get())).grid(row=0, column=2)
+    changeButton = Button(root, text = "Módosítás", width = 15, command = lambda:modifyCall(searchInput.get())).grid(row = 3, column = 1)
+    rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get())).grid(row = 3, column = 2)
 
 
     style = ttk.Style(root)
