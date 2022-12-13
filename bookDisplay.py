@@ -70,8 +70,10 @@ def ezkellide():
     listBox = ttk.Treeview(root, columns=column_names)
 
     for col in column_names:
-        listBox.heading(col, text=col)    
+        listBox.heading(col, text=col)
+        
     listBox.grid(row=2, column=0, columnspan=4)
+    listBox.heading("#0", width=0)
 
     showScores = tk.Button(root, text="Könyvek megjelenítése", width=20, command=showBooks)
     closeButton = tk.Button(root, text="Kilépés", width=15, command=quit)
