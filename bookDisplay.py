@@ -98,5 +98,5 @@ def ezkellide():
 
     fileRead()
     root.mainloop()
-ezkellide()
+#ezkellide()
 #Ezt ki kell venni, ha login van
