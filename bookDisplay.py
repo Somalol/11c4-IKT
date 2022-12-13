@@ -64,13 +64,25 @@ def ezkellide():
     root = Tk()
     root.title('Könyv kölcsönzés')
     #Table
-    label = tk.Label(root, text = "Könyvek", font = ("Arial", 30)).grid(row = 0, column = 0)
-    cols = ('Position', 'Cím','Író', 'Oldalak', 'Megjelenés éve' ,'Kölcsönzött-e')
-    listBox = ttk.Treeview(root, columns=cols, show='headings')
+    label = tk.Label(root, text = "Könyvek", font=("Times New Roman Baltic", 50)).grid(row = 0, column = 0)
 
-    for col in cols:
+    style1 = ttk.Style()
+    style1.configure("Treeview.Heading", background="lightgreen", foreground="gray")
+
+    column_names = ('Position', 'Cím','Író', 'Oldalak', 'Megjelenés éve' ,'Kölcsönzött-e')
+
+    listBox = ttk.Treeview(root, columns=column_names)
+
+    listBox.heading("#0", text="Position")
+    listBox.heading("Cím", text="Cím")
+    listBox.heading("Író", text="Író")
+    listBox.heading("Oldalak", text="Oldalak")
+    listBox.heading("Megjelenés éve", text="Megjelenés éve")
+    listBox.heading("Kölcsönzött-e", text="Kölcsönzött-e")
+
+    for col in column_names:
         listBox.heading(col, text=col)    
-    listBox.grid(row=2, column=0, columnspan=2)
+    listBox.grid(row=2, column=0, columnspan=5)
 
     showScores = tk.Button(root, text="Könyvek megjelenítése", width=20, command=showBooks).grid(row=3, column=0)
     closeButton = tk.Button(root, text="Kilépés", width=15, command=quit).grid(row=3, column=1)
