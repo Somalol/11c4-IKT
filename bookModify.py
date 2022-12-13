@@ -9,6 +9,17 @@ from tkinter import ttk
 
 booksList = fileread.fileRead()
 
+def modifyInputWindow():
+    modwindow0 = Toplevel()
+
+    lab = Label(modwindow0, text="Könyv címe:")
+    lab.pack()
+    ent = Entry(modwindow0)
+    ent.pack()
+
+    btn = Button(modwindow0, text="Bevitel", command=lambda:modify(ent.get()))
+    btn.pack()
+
 def confirmModify(id):
     choosen = booksList[id]
 
@@ -21,13 +32,30 @@ def confirmModify(id):
 
     writeNewFile.dataWrite(id , booksList)
 
-def modify(id):
+def deleteRecord(id):
+   choosen = booksList[id]
+
+   booksList.remove(choosen)
+
+   with open("books.txt", "r", encoding= 'utf-8') as file:
+        lines = file.readlines()
+
+   with open("books.txt", "w", encoding= 'utf-8') as file:
+        for i in range(len(lines)):
+            if i != id:
+                file.writelines(str(lines[i]))
+
+def modify(search):
     global entTitle
     global entPublisher
     global entWriter
     global entPages
     global entDate
     global entRented
+
+    for i in booksList:
+        if i.title == str(search):
+            id = booksList.index(i)
 
     choosen = booksList[id]
 
@@ -75,6 +103,9 @@ def modify(id):
     Conf = Button(modRoot, text="Bevitel", command=lambda: confirmModify(id))
     Conf.grid(column=0 , row=6, columnspan=2)
 
+    DelBtn = Button(modRoot, text="Törlés", command=lambda:deleteRecord(id))
+    DelBtn.grid(column=2 , row=6, columnspan=2)
+
     closeButton = Button(modRoot, text="Close", width=15, command=modRoot.destroy)
-    closeButton.grid(row=6, column=2, columnspan=2)
+    closeButton.grid(row=7, column=0, columnspan=4)
     modRoot.mainloop

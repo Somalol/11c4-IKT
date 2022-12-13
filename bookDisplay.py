@@ -19,7 +19,7 @@ def ezkellide():
         listBox.delete(*listBox.get_children())
         for i in range(len(booksList)):
             choosen = booksList[i]
-            listBox.insert("", "end", values=(i+1 ,choosen.title, choosen.writer, choosen.pages, choosen.date, choosen.rented))
+            listBox.insert("", "end", values=(i+1 ,choosen.title, choosen.publisher, choosen.writer, choosen.pages, choosen.date, choosen.rented))
 
     def bookSearch(search):
         index = 1
@@ -50,16 +50,12 @@ def ezkellide():
         id = bookSearch(search)
         choose = booksList[id]
         if choose.rented == "True":
-            print("Már kölcsönözve")
+            messagebox.showerror(title="Kölcsönzés", message= "Sikertelen kölcsönzés")
         else:
             choose.rented = "True"
-            print("Könyv ki kölcsönözve") 
+            messagebox.showinfo(title="Kölcsönzés", message= "Sikeres kölcsönzés") 
             writeNewFile.dataWrite(id , booksList)
-        showBooks()
-
-    def modifyCall(search):
-        id = bookSearch(search)
-        bookModify.modify(id)
+            bookSearch(search)
 
     root = Tk()
     root.title('Könyv kölcsönzés')
@@ -69,32 +65,33 @@ def ezkellide():
     style1 = ttk.Style()
     style1.configure("Treeview.Heading", background="lightgreen", foreground="gray")
 
-    column_names = ('Position', 'Cím','Író', 'Oldalak', 'Megjelenés éve' ,'Kölcsönzött-e')
+    column_names = ('Pozicíó', 'Cím', 'Kiadó' , 'Író', 'Oldalak', 'Megjelenés éve' ,'Kölcsönzött-e')
 
     listBox = ttk.Treeview(root, columns=column_names)
-
-    listBox.heading("#0", text="Position")
-    listBox.heading("Cím", text="Cím")
-    listBox.heading("Író", text="Író")
-    listBox.heading("Oldalak", text="Oldalak")
-    listBox.heading("Megjelenés éve", text="Megjelenés éve")
-    listBox.heading("Kölcsönzött-e", text="Kölcsönzött-e")
 
     for col in column_names:
         listBox.heading(col, text=col)    
     listBox.grid(row=2, column=0, columnspan=4)
 
-    showScores = tk.Button(root, text="Könyvek megjelenítése", width=20, command=showBooks).grid(row=3, column=0)
-    closeButton = tk.Button(root, text="Kilépés", width=15, command=quit).grid(row=3, column= 3)
+    showScores = tk.Button(root, text="Könyvek megjelenítése", width=20, command=showBooks)
+    closeButton = tk.Button(root, text="Kilépés", width=15, command=quit)
     #Table END
 
     #Search
-    searchInput = Entry(root, width = 40)
-    searchInput.grid(row=0, column=1, columnspan = 2)
-    searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get())).grid(row=0, column=2)
-    changeButton = Button(root, text = "Módosítás", width = 15, command = lambda:modifyCall(searchInput.get())).grid(row = 3, column = 1)
-    rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get())).grid(row = 3, column = 2)
+    searchInput = Entry(root, width = 40, )
+    searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get()))
+    changeButton = Button(root, text = "Módosítás", width = 15, command = lambda:bookModify.modifyInputWindow())
+    rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get()))
 
+    searchInput.grid(row=0, column=1, columnspan = 2)
+    searchInput.place(x= 940, y= 25, height=25, anchor='nw')
+    searchButton.grid(row=0, column=2)
+    searchButton.place(x= 1200, y= 25, height=25, anchor='nw')
+
+    showScores.grid(row=3, column=0)
+    closeButton.grid(row=3, column= 3)
+    changeButton.grid(row = 3, column = 1)
+    rentButton.grid(row = 3, column = 2)
 
     style = ttk.Style(root)
     style.theme_use("winnative")
