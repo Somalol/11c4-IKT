@@ -1,6 +1,7 @@
 from tkinter import *
 import bookDisplay 
 
+
 booksList = []
 
 root = Tk()
@@ -84,12 +85,9 @@ def login():
             benev = i["nev"]
             betype = i["rang"]
             if(i["rang"] == "admin"):
-                adminpage()
+                bookDisplay.adminPage()
             #elif(i["rang"] == "user"):
-            #    userpage()
-
-def adminpage():
-    bookDisplay.ezkellide()
+            #   bookDisplay.userPage()
 
 
 btn_login = Button(root, text="Bejelentkezés", bg = "black", fg = "white", command=lambda:login()).grid(row = 4, column = 1)
