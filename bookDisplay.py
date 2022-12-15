@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
 from tkinter import ttk
+
 import fileread
 import bookModify
 import writeNewFile
@@ -57,7 +58,11 @@ def bookSearch(search, listBox, isRentedVar, searchInput):
             showBooks()
 
 def bookRent(search):
-        id = bookSearch(search)
+        for i in range(len(booksList)):
+            if booksList[i].title == search:
+                id = i
+                break
+            
         choose = booksList[id]
         if choose.rented == "True":
             messagebox.showerror(title="Kölcsönzés", message= "Sikertelen kölcsönzés")
@@ -65,7 +70,6 @@ def bookRent(search):
             choose.rented = "True"
             messagebox.showinfo(title="Kölcsönzés", message= "Sikeres kölcsönzés") 
             writeNewFile.dataWrite(id , booksList)
-            bookSearch(search)
 
 def adminPage():
         root = Tk()
@@ -115,7 +119,6 @@ def adminPage():
         style.theme_use("winnative")
 
         fileRead()
-
 
 def userPage():
         root = Tk()

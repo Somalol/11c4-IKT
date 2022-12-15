@@ -30,20 +30,13 @@ def confirmModify(id):
     choosen.date = entDate.get()
     choosen.rented = entRented.get()
 
+    messagebox.showinfo(title="Kölcsönzés", message= "Sikeres módosítás") 
     writeNewFile.dataWrite(id , booksList)
 
 def deleteRecord(id):
    choosen = booksList[id]
-
    booksList.remove(choosen)
-
-   with open("books.txt", "r", encoding= 'utf-8') as file:
-        lines = file.readlines()
-
-   with open("books.txt", "w", encoding= 'utf-8') as file:
-        for i in range(len(lines)):
-            if i != id:
-                file.writelines(str(lines[i]))
+   writeNewFile.deleteRecords(id)
 
 def modify(search):
     global entTitle

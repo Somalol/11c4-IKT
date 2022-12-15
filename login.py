@@ -1,7 +1,6 @@
 from tkinter import *
 import bookDisplay 
 
-
 booksList = []
 
 root = Tk()
@@ -21,6 +20,8 @@ lbl_jelszo.grid(row = 2, column = 1)
 etr_jelszo = Entry(root, bg = "lightblue", width = 30)
 etr_jelszo.grid(row = 3, column = 1)
 
+btn_login = Button(root, text="Bejelentkezés", bg = "black", fg = "white", command=lambda:login()).grid(row = 4, column = 1)
+
 lbl_uj = Label(root, text = "Még nem regisztrált? Tegye meg!", bg = "black", fg = "white")
 lbl_uj.grid(row = 5, column = 1)
 btn_regist = Button(root, text = "Regisztrálok", bg = "black", fg = "white", command = lambda:regist()).grid(row = 6, column = 1)
@@ -35,8 +36,6 @@ with open("loginusers.txt", "r", encoding = "utf-8") as adatok:
             "jelszo" : str(sor[2]),
             "rang" : str(sor[3])
         })
-
-
 
 benev = ""
 befhsz = ""
@@ -70,7 +69,6 @@ def regist():
         with open("loginusers.txt", "a", encoding = "utf-8") as adatok:
             adatok.writelines("\n" + etr_nev.get() + ";" + etr_fhszn1.get() + ";" + etr_jelszo1.get() + ";" + "user")
 
-
 def login():
     global befhsz
     global bejelszo
@@ -85,11 +83,9 @@ def login():
             benev = i["nev"]
             betype = i["rang"]
             if(i["rang"] == "admin"):
+                root.destroy()
                 bookDisplay.adminPage()
             #elif(i["rang"] == "user"):
             #   bookDisplay.userPage()
-
-
-btn_login = Button(root, text="Bejelentkezés", bg = "black", fg = "white", command=lambda:login()).grid(row = 4, column = 1)
 
 root.mainloop()
