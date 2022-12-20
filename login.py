@@ -22,10 +22,6 @@ etr_jelszo.grid(row = 3, column = 1)
 
 btn_login = Button(root, text="Bejelentkezés", bg = "black", fg = "white", command=lambda:login()).grid(row = 4, column = 1)
 
-lbl_uj = Label(root, text = "Még nem regisztrált? Tegye meg!", bg = "black", fg = "white")
-lbl_uj.grid(row = 5, column = 1)
-btn_regist = Button(root, text = "Regisztrálok", bg = "black", fg = "white", command = lambda:regist()).grid(row = 6, column = 1)
-
 
 with open("loginusers.txt", "r", encoding = "utf-8") as adatok:
     for i in adatok:
