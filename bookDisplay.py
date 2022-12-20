@@ -122,7 +122,7 @@ def adminPage():
         
 
         isRentedButton = tk.Checkbutton(root, text='Csak kölcsönözhető',variable=isRentedVar, onvalue=1, offvalue=0)
-        isRentedButton.grid(row=0, column=3)
+        isRentedButton.grid(row=0, column=4)
 
         style = ttk.Style(root)
         style.theme_use("winnative")
