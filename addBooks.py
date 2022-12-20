@@ -30,6 +30,3 @@ def NewBook():
 def confirm(title, publisher,writer,pages, date, addBook):
     addBook.destroy()
     writeNewFile.addRecord(title, publisher,writer,pages, date, "False")
-
-
-
