@@ -142,7 +142,7 @@ def userPage():
 
         for col in column_names:
             listBox.heading(col, text=col)
-            
+
         listBox['show'] = 'headings'
         listBox.grid(row=2, column=0, columnspan=4)
         
@@ -162,7 +162,7 @@ def userPage():
         searchButton.place(x= 1200, y= 25, height=25, anchor='nw')
 
         showScores.grid(row=3, column=0)
-        closeButton.grid(row=3, column= 3)
+        quitBtn.grid(row=3, column= 3)
         rentButton.grid(row = 3, column = 2)
 
         isRentedButton = tk.Checkbutton(root, text='Csak kölcsönözhető',variable=isRentedVar, onvalue=1, offvalue=0)
