@@ -8,6 +8,10 @@ import fileread
 import bookModify
 import writeNewFile
 
+def logout(root):
+    root.destroy()
+    import login
+    
 def fileRead():
         global booksList
         booksList = fileread.fileRead()
@@ -93,7 +97,7 @@ def adminPage():
         
 
         showScores = tk.Button(root, text="Könyvek megjelenítése", width=20, command=lambda: showBooks(listBox))
-        closeButton = tk.Button(root, text="Kilépés", width=15, command=quit)
+        quitBtn = tk.Button(root, text="Kijelentkezés", width=15, command=lambda:logout(root))
         #Table END
 
         #Search
@@ -108,7 +112,7 @@ def adminPage():
         searchButton.place(x= 1200, y= 25, height=25, anchor='nw')
 
         showScores.grid(row=3, column=0)
-        closeButton.grid(row=3, column= 3)
+        quitBtn.grid(row=3, column= 3)
         changeButton.grid(row = 3, column = 1)
         rentButton.grid(row = 3, column = 2)
 
@@ -142,7 +146,7 @@ def userPage():
         
 
         showScores = tk.Button(root, text="Könyvek megjelenítése", width=20, command=lambda: showBooks(listBox))
-        closeButton = tk.Button(root, text="Kilépés", width=15, command=quit)
+        quitBtn = tk.Button(root, text="Kijelentkezés", width=15, command=lambda:logout(root))
         #Table END
 
         #Search

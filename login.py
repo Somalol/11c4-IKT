@@ -21,6 +21,7 @@ etr_jelszo = Entry(root, bg = "lightblue", width = 30)
 etr_jelszo.grid(row = 3, column = 1)
 
 btn_login = Button(root, text="Bejelentkezés", bg = "black", fg = "white", command=lambda:login()).grid(row = 4, column = 1)
+closeBtn = Button(root, text="Bezárás", command=quit ).grid(row=5, column=1)
 
 
 with open("loginusers.txt", "r", encoding = "utf-8") as adatok:
