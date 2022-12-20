@@ -1,0 +1,5 @@
+Nádler Balázs;admin;admin;admin
+Tivadari Soma;soma;1;admin
+Szautner Károly;karcsi;titok123;user
+Nagy Dominik;dominik;jelszo;user
+Varga Milán;milan;sajtospogacsa;user
