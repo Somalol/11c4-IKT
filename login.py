@@ -5,22 +5,22 @@ booksList = []
 
 root = Tk()
 root.title("Bejelentkezés")
-root.configure(bg = "black")
+root.geometry("170x170")
 
 lista = []
 booksList = []
 
-lbl_felh = Label(root, text = "Felhasználónév:", bg="black", fg="white")
-lbl_felh.grid(row = 0, column = 1)
-etr_fhszn = Entry(root, bg = "lightblue", width = 30)
-etr_fhszn.grid(row = 1, column = 1)
+lbl_felh = Label(root, text = "Felhasználónév:")
+lbl_felh.grid(row = 0, column = 1, padx = 20)
+etr_fhszn = Entry(root, width = 20)
+etr_fhszn.grid(row = 1, column = 1, padx = 20, pady = 5)
 
-lbl_jelszo = Label(root, text = "Jelszó: ", bg = "black", fg = "white")
-lbl_jelszo.grid(row = 2, column = 1)
-etr_jelszo = Entry(root, bg = "lightblue", width = 30,  show="*")
-etr_jelszo.grid(row = 3, column = 1)
+lbl_jelszo = Label(root, text = "Jelszó: ")
+lbl_jelszo.grid(row = 2, column = 1, padx = 20)
+etr_jelszo = Entry(root, width = 20,  show="*")
+etr_jelszo.grid(row = 3, column = 1, padx = 20, pady = 5)
 
-btn_login = Button(root, text="Bejelentkezés", bg = "black", fg = "white", command=lambda:login()).grid(row = 4, column = 1)
+btn_login = Button(root, text="Bejelentkezés", command=lambda:login()).grid(row = 4, column = 1, pady = 5)
 closeBtn = Button(root, text="Bezárás", command=quit ).grid(row=5, column=1)
 
 
