@@ -108,9 +108,9 @@ def adminPage():
         rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get()))
 
         searchInput.grid(row=0, column=1, columnspan = 2)
-        searchInput.place(x= 940, y= 25, height=25, anchor='nw')
+        searchInput.place(x= 770, y= 25, height=25, anchor='nw')
         searchButton.grid(row=0, column=2)
-        searchButton.place(x= 1200, y= 25, height=25, anchor='nw')
+        searchButton.place(x= 1040, y= 25, height=25, anchor='nw')
 
         showScores.grid(row=3, column=0)
         quitBtn.grid(row=3, column= 3)
@@ -157,9 +157,9 @@ def userPage():
         rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get()))
 
         searchInput.grid(row=0, column=1, columnspan = 2)
-        searchInput.place(x= 940, y= 25, height=25, anchor='nw')
+        searchInput.place(x= 770, y= 25, height=25, anchor='nw')
         searchButton.grid(row=0, column=2)
-        searchButton.place(x= 1200, y= 25, height=25, anchor='nw')
+        searchButton.place(x= 1040, y= 25, height=25, anchor='nw')
 
         showScores.grid(row=3, column=0)
         quitBtn.grid(row=3, column= 3)
