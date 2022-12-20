@@ -93,6 +93,7 @@ def adminPage():
         for col in column_names:
             listBox.heading(col, text=col)
         
+        listBox['show'] = 'headings'
         listBox.grid(row=2, column=0, columnspan=4)
         
 
@@ -141,7 +142,8 @@ def userPage():
 
         for col in column_names:
             listBox.heading(col, text=col)
-        
+            
+        listBox['show'] = 'headings'
         listBox.grid(row=2, column=0, columnspan=4)
         
 
