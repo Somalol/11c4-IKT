@@ -42,32 +42,6 @@ befhsz = ""
 bejelszo = ""
 betype = ""
 
-def regist():
-    reg = Tk()
-    reg.title("Regisztráció")
-    reg.configure(bg = "black")
-
-    lbl_nev = Label(reg, text="Teljes neve:", bg = "black", fg = "white")
-    lbl_nev.grid(row = 0, column = 1)
-    etr_nev = Entry(reg, bg = "lightblue", width = 30)
-    etr_nev.grid(row = 1, column = 1)
-
-    lbl_felh1 = Label(reg, text = "Felhasználónév:", bg="black", fg="white")
-    lbl_felh1.grid(row = 2, column = 1)
-    etr_fhszn1 = Entry(reg, bg = "lightblue", width = 30)
-    etr_fhszn1.grid(row = 3, column = 1)
-
-    lbl_jelszo1 = Label(reg, text = "Jelszó: ", bg = "black", fg = "white")
-    lbl_jelszo1.grid(row = 4, column = 1)
-    etr_jelszo1 = Entry(reg, bg = "lightblue", width = 30)
-    etr_jelszo1.grid(row = 5, column = 1)
-
-    btn_regist1 = Button(reg, text = "Regisztrálok!", bg = "black", fg = "white", command = lambda:bumm())
-    btn_regist1.grid(row = 6, column = 1)
-
-    def bumm():
-        with open("loginusers.txt", "a", encoding = "utf-8") as adatok:
-            adatok.writelines("\n" + etr_nev.get() + ";" + etr_fhszn1.get() + ";" + etr_jelszo1.get() + ";" + "user")
 
 def login():
     global befhsz
