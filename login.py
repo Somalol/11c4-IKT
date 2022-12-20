@@ -17,7 +17,7 @@ etr_fhszn.grid(row = 1, column = 1)
 
 lbl_jelszo = Label(root, text = "Jelszó: ", bg = "black", fg = "white")
 lbl_jelszo.grid(row = 2, column = 1)
-etr_jelszo = Entry(root, bg = "lightblue", width = 30)
+etr_jelszo = Entry(root, bg = "lightblue", width = 30,  show="*")
 etr_jelszo.grid(row = 3, column = 1)
 
 btn_login = Button(root, text="Bejelentkezés", bg = "black", fg = "white", command=lambda:login()).grid(row = 4, column = 1)
@@ -56,7 +56,7 @@ def login():
             if(i["rang"] == "admin"):
                 root.destroy()
                 bookDisplay.adminPage()
-            #elif(i["rang"] == "user"):
-            #   bookDisplay.userPage()
+            elif(i["rang"] == "user"):
+                bookDisplay.userPage()
 
 root.mainloop()
