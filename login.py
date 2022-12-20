@@ -57,6 +57,7 @@ def login():
                 root.destroy()
                 bookDisplay.adminPage()
             elif(i["rang"] == "user"):
+                root.destroy()
                 bookDisplay.userPage()
 
 root.mainloop()
