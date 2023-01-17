@@ -109,7 +109,6 @@ def adminPage():
         searchInput = Entry(root, width = 40, )
         searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get(), listBox, isRentedVar, searchInput))
         changeButton = Button(root, text = "Módosítás", width = 15, command = lambda:bookModify.modifyInputWindow())
-        rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get()))
         addBooksBtn = Button(root, text="Könyv felvitele",width = 15, command = lambda: addBooks.NewBook())
 
         searchInput.grid(row=0, column=1, columnspan = 2)
@@ -121,7 +120,6 @@ def adminPage():
         quitBtn.grid(row=3, column= 4)
         changeButton.grid(row = 3, column = 1)
         addBooksBtn.grid(row = 3, column = 2)
-        rentButton.grid(row = 3, column = 3)
         
 
         isRentedButton = tk.Checkbutton(root, text='Csak kölcsönözhető',variable=isRentedVar, onvalue=1, offvalue=0)
