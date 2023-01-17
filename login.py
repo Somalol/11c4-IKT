@@ -1,12 +1,13 @@
 from tkinter import *
 import bookDisplay
+import register
 from tkinter import messagebox
 
 booksList = []
 
 root = Tk()
 root.title("Bejelentkezés")
-root.geometry("170x170")
+root.geometry("170x200")
 
 lista = []
 booksList = []
@@ -22,18 +23,8 @@ etr_jelszo = Entry(root, width = 20,  show="*")
 etr_jelszo.grid(row = 3, column = 1, padx = 20, pady = 5)
 
 btn_login = Button(root, text="Bejelentkezés", command=lambda:login()).grid(row = 4, column = 1, pady = 5)
-closeBtn = Button(root, text="Bezárás", command=quit ).grid(row=5, column=1)
-
-
-with open("loginusers.txt", "r", encoding = "utf-8") as adatok:
-    for i in adatok:
-        sor = i.strip().split(";")
-        lista.append({
-            "nev" : str(sor[0]),
-            "fhsznev" : str(sor[1]),
-            "jelszo" : str(sor[2]),
-            "rang" : str(sor[3])
-        })
+registerBtn = Button(root, text="Regisztráció", command=lambda: register.registerWindow()).grid(row = 5, column = 1, pady = 5)
+closeBtn = Button(root, text="Bezárás", command=quit ).grid(row=6, column=1)
 
 benev = ""
 befhsz = ""
@@ -49,6 +40,16 @@ def login():
 
     befhsz = etr_fhszn.get()
     bejelszo = etr_jelszo.get()
+
+    with open("loginusers.txt", "r", encoding = "utf-8") as adatok:
+        for i in adatok:
+            sor = i.strip().split(";")
+            lista.append({
+                "nev" : str(sor[0]),
+                "fhsznev" : str(sor[1]),
+                "jelszo" : str(sor[2]),
+                "rang" : str(sor[3])
+            })
 
     for i in lista:
         if(i["fhsznev"] == befhsz and i["jelszo"] == bejelszo):
