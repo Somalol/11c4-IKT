@@ -5,14 +5,13 @@ import fileread
 import writeNewFile
 
 booksList = []
+ownedBooks = []
 
 def addToInventory(id, username):
     global usernameHere
     usernameHere = username
-    booksList = fileread.fileRead()
-    if(booksList[id].rented == 'True'):
-        with open("inventory.txt", "a", encoding= 'utf-8') as file:
-            file.write(id + ";" + username + '\n')
+    with open("inventory.txt", "a", encoding= 'utf-8') as file:
+        file.write(str(id) + ";" + username + '\n')
 
 def removeFromInventoryWindow():
 
@@ -27,13 +26,21 @@ def removeFromInventoryWindow():
     btn.pack()
 
 def removeFromInventory(title):
-    with open("inventory.txt", 'r', encoding = 'utf-8') as f:
-            data = f.readlines()
 
-    for i in range(len(data)):
-        if data[i].title == title:
+    ownedBooks.clear()
+    with open("books.txt", 'r', encoding = 'utf-8') as f:
+        for line in f:
+            id, username = line.strip().split(";")
+            actual = [id, username]
+            ownedBooks.append(actual)
+
+    for i in range(len(ownedBooks)):
+        if booksList[ownedBooks[i][0]] == title:
             invId = i
             break
+
+    with open("books.txt", "r", encoding= 'utf-8') as file:
+                data = file.readlines()
     
     with open("inventory.txt", "w", encoding= 'utf-8') as file:
                 for i in range(len(data)):
@@ -49,18 +56,25 @@ def removeFromInventory(title):
     booksList[id].rented == 'False' 
     writeNewFile.dataWrite(id , booksList)
 
-def showBooksInventory(listBox):
+def showBooksInventory(listBox, username):
+    booksList = fileread.fileRead()
     with open("inventory.txt", 'r', encoding = 'utf-8') as f:
-        data = f.readlines()
-    id = 0    
-    for i in data:
-        if i[1] == usernameHere:
+        for line in f:
+            id, username = line.strip().split(";")
+            actual = [id, username]
+            ownedBooks.append(actual)
+    id = 0  
+
+    for ownedBook in ownedBooks:
+        if ownedBook[1] == username:
             listBox.delete(*listBox.get_children())
-            choosen = booksList[i[0]]
+            bookid = ownedBook[0]
+            print(bookid)
+            choosen = booksList[int(bookid)]
             listBox.insert("", "end", values=(id+1 ,choosen.title, choosen.publisher, choosen.writer, choosen.pages, choosen.date, choosen.rented))
             id += 1
 
-def showInventory():
+def showInventory(username):
 
     invRoot = Tk()
     invRoot.title('Saját könyvek')
@@ -81,7 +95,7 @@ def showInventory():
     listBox['show'] = 'headings'
     listBox.grid(row=2, column=0, columnspan=4)
 
-    showBooksInventory(listBox)
+    showBooksInventory(listBox, username)
 
     quitBtn = tk.Button(invRoot, text="Kijelentkezés", width=15, command= invRoot.destroy)
     quitBtn.grid(row=3, column= 3)
