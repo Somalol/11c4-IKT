@@ -158,7 +158,7 @@ def userPage():
 
         #User
         UserOptions = StringVar()
-        UserOptions.set("Bejelentkezve mint: " + login.benev)
+        UserOptions.set(login.benev)
 
         options = [
             login.benev,
