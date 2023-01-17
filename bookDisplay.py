@@ -8,6 +8,7 @@ import login
 import fileread
 import bookModify
 import writeNewFile
+import addBooks
 
 def logout(root):
     root.destroy()
@@ -95,7 +96,7 @@ def adminPage():
             listBox.heading(col, text=col)
         
         listBox['show'] = 'headings'
-        listBox.grid(row=2, column=0, columnspan=4)
+        listBox.grid(row=2, column=0, columnspan=5)
         
 
         showScores = tk.Button(root, text="Könyvek megjelenítése", width=20, command=lambda: showBooks(listBox))
@@ -107,6 +108,7 @@ def adminPage():
         searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get(), listBox, isRentedVar, searchInput))
         changeButton = Button(root, text = "Módosítás", width = 15, command = lambda:bookModify.modifyInputWindow())
         rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get()))
+        addBooksBtn = Button(root, text="Könyv felvitele",width = 15, command = lambda: addBooks.NewBook())
 
         searchInput.grid(row=0, column=1, columnspan = 2)
         searchInput.place(x= 770, y= 25, height=25, anchor='nw')
@@ -114,12 +116,14 @@ def adminPage():
         searchButton.place(x= 1040, y= 25, height=25, anchor='nw')
 
         showScores.grid(row=3, column=0)
-        quitBtn.grid(row=3, column= 3)
+        quitBtn.grid(row=3, column= 4)
         changeButton.grid(row = 3, column = 1)
-        rentButton.grid(row = 3, column = 2)
+        addBooksBtn.grid(row = 3, column = 2)
+        rentButton.grid(row = 3, column = 3)
+        
 
         isRentedButton = tk.Checkbutton(root, text='Csak kölcsönözhető',variable=isRentedVar, onvalue=1, offvalue=0)
-        isRentedButton.grid(row=0, column=3)
+        isRentedButton.grid(row=0, column=4)
 
         style = ttk.Style(root)
         style.theme_use("winnative")

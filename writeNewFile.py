@@ -16,4 +16,8 @@ def deleteRecords(id):
                 for i in range(len(data)):
                         if i != id:
                                 file.writelines(str(data[i]))
-                messagebox.showinfo(title="Kölcsönzés", message= "Sikeres törlés") 
+                messagebox.showinfo(title="Kölcsönzés", message= "Sikeres törlés")
+
+def addRecord(title, publisher,writer,pages, date, rented):
+        with open("books.txt", "a", encoding= 'utf-8') as file:
+                file.write("\n" + title + ";" + publisher + ";" + writer + ";" + pages +";"+ date +";" + rented)
