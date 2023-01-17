@@ -77,6 +77,9 @@ def bookRent(search):
             messagebox.showinfo(title="Kölcsönzés", message= "Sikeres kölcsönzés") 
             writeNewFile.dataWrite(id , booksList)
 
+def Inventory():
+    print("Hello")
+
 def adminPage():
         root = Tk()
         root.title('Könyv kölcsönzés')
@@ -155,20 +158,6 @@ def userPage():
         showScores = tk.Button(root, text="Könyvek megjelenítése", width=20, command=lambda: showBooks(listBox))
         quitBtn = tk.Button(root, text="Kijelentkezés", width=15, command=lambda:logout(root))
         #Table END
-
-        #User
-        UserOptions = StringVar()
-        UserOptions.set(login.benev)
-
-        options = [
-            login.benev,
-            "Könyveim",
-            "Kijelentkezés"
-        ]
-
-        drop = OptionMenu(root, UserOptions, *options)
-        drop.grid(row=0, column=4)
-        drop.place(anchor = "nw")
 
         #Search
         searchInput = Entry(root, width = 40)
