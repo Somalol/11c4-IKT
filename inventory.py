@@ -84,9 +84,6 @@ def showInventory(username):
         #Table
     label = tk.Label(invRoot, text = "Kölcsönzött könyvek", font=("Times New Roman Baltic", 50)).grid(row = 0, column = 0)
 
-    style1 = ttk.Style()
-    style1.configure("Treeview.Heading", background="lightgreen", foreground="gray")
-
     column_names = ('Pozicíó', 'Cím', 'Kiadó' , 'Író', 'Oldalak', 'Megjelenés éve' ,'Kölcsönzött-e')
 
     listBox = ttk.Treeview(invRoot, columns=column_names)

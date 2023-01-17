@@ -87,9 +87,6 @@ def adminPage():
         #Table
         label = tk.Label(root, text = "Könyvek", font=("Times New Roman Baltic", 50)).grid(row = 0, column = 0)
 
-        style1 = ttk.Style()
-        style1.configure("Treeview.Heading", background="lightgreen", foreground="gray")
-
         column_names = ('Pozicíó', 'Cím', 'Kiadó' , 'Író', 'Oldalak', 'Megjelenés éve' ,'Kölcsönzött-e')
 
         listBox = ttk.Treeview(root, columns=column_names)
@@ -137,9 +134,6 @@ def userPage():
         isRentedVar = tk.IntVar()
         #Table
         label = tk.Label(root, text = "Könyvek", font=("Times New Roman Baltic", 50)).grid(row = 0, column = 0)
-
-        style1 = ttk.Style()
-        style1.configure("Treeview.Heading", background="lightgreen", foreground="gray")
 
         column_names = ('Pozicíó', 'Cím', 'Kiadó' , 'Író', 'Oldalak', 'Megjelenés éve' ,'Kölcsönzött-e')
 
