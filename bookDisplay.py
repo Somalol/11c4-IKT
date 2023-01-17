@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
 from tkinter import ttk
+import login
 
 import fileread
 import bookModify
@@ -155,8 +156,22 @@ def userPage():
         quitBtn = tk.Button(root, text="Kijelentkezés", width=15, command=lambda:logout(root))
         #Table END
 
+        #User
+        UserOptions = StringVar()
+        UserOptions.set("Bejelentkezve mint: " + login.benev)
+
+        options = [
+            login.benev,
+            "Könyveim",
+            "Kijelentkezés"
+        ]
+
+        drop = OptionMenu(root, UserOptions, *options)
+        drop.grid(row=0, column=4)
+        drop.place(anchor = "nw")
+
         #Search
-        searchInput = Entry(root, width = 40, )
+        searchInput = Entry(root, width = 40)
         searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get(), listBox, isRentedVar, searchInput))
         rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get()))
 
