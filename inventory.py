@@ -22,7 +22,7 @@ def removeFromInventoryWindow():
     ent = Entry(returnWindow)
     ent.pack()
 
-    btn = Button(returnWindow, text="Bevitel", command=lambda: removeFromInventory(ent.get(), returnWindow))
+    btn = Button(returnWindow, text="Bevitel", command=lambda: removeFromInventory(ent.get()))
     btn.pack()
 
 def removeFromInventory(title):
