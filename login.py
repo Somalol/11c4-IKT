@@ -55,11 +55,9 @@ def login():
             benev = i["nev"]
             betype = i["rang"]
             if(i["rang"] == "admin"):
-                messagebox.showinfo(title="Üdvözlés", message= "Üdv " + i["nev"]) 
                 root.destroy()
                 bookDisplay.adminPage()
             elif(i["rang"] == "user"):
-                messagebox.showinfo(title="Üdvözlés", message= "Üdv " + i["nev"])
                 root.destroy()
                 bookDisplay.userPage()
 

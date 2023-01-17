@@ -79,12 +79,9 @@ def bookRent(search):
             inventory.addToInventory(id, login.benev)
             writeNewFile.dataWrite(id , booksList)
 
-def Inventory():
-    print("Hello")
-
 def adminPage():
         root = Tk()
-        root.title('Könyv kölcsönzés')
+        root.title("Bejelentkezve: " + login.benev)
 
         isRentedVar = tk.IntVar()
         #Table
@@ -137,7 +134,7 @@ def adminPage():
 
 def userPage():
         root = Tk()
-        root.title('Könyv kölcsönzés')
+        root.title("Bejelentkezve: " + login.benev)
 
         isRentedVar = tk.IntVar()
         #Table
