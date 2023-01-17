@@ -22,24 +22,27 @@ def removeFromInventoryWindow():
     ent = Entry(returnWindow)
     ent.pack()
 
-    btn = Button(returnWindow, text="Bevitel", command=lambda: removeFromInventory(ent.get()))
+    btn = Button(returnWindow, text="Bevitel", command=lambda: removeFromInventory(ent.get(), returnWindow))
     btn.pack()
 
 def removeFromInventory(title):
+    booksList = fileread.fileRead()
 
     ownedBooks.clear()
-    with open("books.txt", 'r', encoding = 'utf-8') as f:
+    with open("inventory.txt", 'r', encoding = 'utf-8') as f:
         for line in f:
             id, username = line.strip().split(";")
             actual = [id, username]
             ownedBooks.append(actual)
-
-    for i in range(len(ownedBooks)):
-        if booksList[ownedBooks[i][0]] == title:
-            invId = i
+    id = 0
+    for ownedBook in ownedBooks:
+        bookId = ownedBook[0]
+        if booksList[int(bookId)].title == title:
+            invId = id
             break
+        id += 1
 
-    with open("books.txt", "r", encoding= 'utf-8') as file:
+    with open("inventory.txt", "r", encoding= 'utf-8') as file:
                 data = file.readlines()
     
     with open("inventory.txt", "w", encoding= 'utf-8') as file:
@@ -52,7 +55,6 @@ def removeFromInventory(title):
             id = i
             break
 
-    booksList = fileread.fileRead()
     booksList[id].rented == 'False' 
     writeNewFile.dataWrite(id , booksList)
 
