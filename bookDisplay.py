@@ -9,6 +9,7 @@ import fileread
 import bookModify
 import writeNewFile
 import addBooks
+import inventory
 
 def logout(root):
     root.destroy()
@@ -74,7 +75,8 @@ def bookRent(search):
             messagebox.showerror(title="Kölcsönzés", message= "Sikertelen kölcsönzés")
         else:
             choose.rented = "True"
-            messagebox.showinfo(title="Kölcsönzés", message= "Sikeres kölcsönzés") 
+            messagebox.showinfo(title="Kölcsönzés", message= "Sikeres kölcsönzés")
+            inventory.addToInventory(id, login.benev)
             writeNewFile.dataWrite(id , booksList)
 
 def Inventory():
@@ -164,12 +166,15 @@ def userPage():
         searchButton = Button(root, text="Keresés", width = 15, command=lambda: bookSearch(searchInput.get(), listBox, isRentedVar, searchInput))
         rentButton = Button(root, text = "Kölcsönzés", width = 15, command = lambda: bookRent(searchInput.get()))
 
+        inventoryBtn = Button(root, text = "Saját könyvek", width = 15, command = lambda: inventory.showInventory(login.benev))
+
         searchInput.grid(row=0, column=1, columnspan = 2)
         searchInput.place(x= 770, y= 25, height=25, anchor='nw')
         searchButton.grid(row=0, column=2)
         searchButton.place(x= 1040, y= 25, height=25, anchor='nw')
 
         showScores.grid(row=3, column=0)
+        inventoryBtn.grid(row=3, column=1)
         quitBtn.grid(row=3, column= 3)
         rentButton.grid(row = 3, column = 2)
 
